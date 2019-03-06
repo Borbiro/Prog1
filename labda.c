@@ -20,8 +20,7 @@ int main(void){
         getmaxyx ( win, my , mx );
 
         mvprintw ( y, x, "0" );
-
-        refresh ();
+	       
         usleep ( 100000 );
 
         clear();

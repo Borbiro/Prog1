@@ -21,6 +21,7 @@ int main(void){
 
         mvprintw ( y, x, "0" );
 	       
+	refresh();
         usleep ( 100000 );
 
         clear();

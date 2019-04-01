@@ -1,0 +1,111 @@
+<part xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <title>Bevezetés</title>
+    <partintro>
+        <para> 
+        </para>
+    </partintro>
+    <chapter>
+        <info>
+            <title>Vízió</title>
+            <keywordset>
+                <keyword/>
+            </keywordset>
+        </info>
+        <section>
+            <title>Mi a programozás?</title>
+            <para>
+                Ne cifrázzuk: programok írása. Mik akkor a programok? Mit jelent az írásuk?
+            </para>
+        </section>
+        <section>
+            <title>Milyen doksikat olvassak el?</title>
+            <itemizedlist>
+                <listitem>
+                    <para>Kezd ezzel: <link xlink:href="http://esr.fsf.hu/hacker-howto.html">http://esr.fsf.hu/hacker-howto.html</link>!</para>                        
+                </listitem>
+                <listitem>
+                    <para>Olvasgasd aztán a kézikönyv lapjait, kezd a <command>man man</command> parancs kiadásával. A C programozásban
+                    a 3-as szintű lapokat fogod nézegetni, például az első feladat kapcsán ezt a 
+                    <command>man 3 sleep</command> lapot</para>                        
+                </listitem>
+                <listitem>
+                    <para>C kapcsán a <citation>KERNIGHANRITCHIE</citation> könyv adott részei.</para>                        
+                </listitem>
+                <listitem>
+                    <para>C++ kapcsán a <citation>BMECPP</citation> könyv adott részei.</para>                        
+                </listitem>
+                <listitem>
+                    <para>Az igazi kockák persze csemegéznek a C nyelvi szabvány 
+                        <link xlink:href="https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf">ISO/IEC 9899:2017</link> kódcsipeteiből is.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>Amiből viszont a legeslegjobban lehet tanulni, az a 
+                        <link xlink:href="https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html">The GNU C Reference Manual</link>, mert gcc specifikus és programozókra
+                        van hangolva: szinte csak 1-2 lényegi mondat és apró, lényegi kódcsipetek! Aki pdf-ben jobban
+                        szereti olvasni: <link xlink:href="https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.pdf"></link>
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>Az R kódok olvasása kis általános tapasztalat után automatikusan, erőfeszítés nélkül menni fog. 
+                        A Python nincs ennyire a spektrum magától értetődő végén, ezért ahhoz olvasd el a  
+                        <citation>BMECPP</citation> könyv - 20 oldalas gyorstalpaló részét.
+                    </para>                        
+                </listitem>
+            </itemizedlist>            
+        </section>
+        <section>
+            <title>Milyen filmeket nézzek meg?</title>
+            <itemizedlist>
+                <listitem>
+                    <para>21 - Las Vegas ostroma, 
+                        <link xlink:href="https://www.imdb.com/title/tt0478087/">https://www.imdb.com/title/tt0478087/</link>,
+                        benne a <link xlink:href="#bhax-textbook-feladatok-turing.MontyHall">Monty Hall probléma</link> bemutatása.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>Kódjátszma, 
+                        <link xlink:href="https://www.imdb.com/title/tt2084970">https://www.imdb.com/title/tt2084970</link>,
+                        benne a <link xlink:href="#bhax-textbook-feladatok-caesar.EXOR-toro">kódtörő feladat</link> élménye.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>, 
+                        <link xlink:href=""></link>,
+                        benne a <link xlink:href="#"></link> bemutatása.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>, 
+                        <link xlink:href=""></link>,
+                        benne a <link xlink:href="#"></link> bemutatása.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>, 
+                        <link xlink:href=""></link>,
+                        benne a <link xlink:href="#"></link> bemutatása.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>, 
+                        <link xlink:href=""></link>,
+                        benne a <link xlink:href="#"></link> bemutatása.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>, 
+                        <link xlink:href=""></link>,
+                        benne a <link xlink:href="#"></link> bemutatása.
+                    </para>                        
+                </listitem>
+                <listitem>
+                    <para>, 
+                        <link xlink:href=""></link>,
+                        benne a <link xlink:href="#"></link> bemutatása.
+                    </para>                        
+                </listitem>
+            </itemizedlist> 
+        </section>
+    </chapter>                
+</part>  

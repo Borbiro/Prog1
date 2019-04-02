@@ -1,0 +1,189 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Welch!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Első osztályom</title>
+        <para>
+	
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+	<programlisting language="java">
+<![CDATA[
+public class PolarGenerator {
+    boolean nincsTarolt = true;
+    double tarolt;
+    public PolarGenerator() {
+        nincsTarolt = true;
+    }
+    public double kovetkezo() {
+        if(nincsTarolt) {
+            double u1, u2, v1, v2, w;
+            do {
+                u1 = Math.random();
+                u2 = Math.random();
+                v1 = 2*u1 - 1;
+                v2 = 2*u2 - 1;
+                w = v1*v1 + v2*v2;
+            } while(w > 1);
+            double r = Math.sqrt((-2*Math.log(w))/w);
+            tarolt = r*v2;
+            nincsTarolt = !nincsTarolt;
+            return r*v1;
+        } else {
+            nincsTarolt = !nincsTarolt;
+            return tarolt;
+        }
+    }
+    public static void main(String[] args) {
+        PolarGenerator g = new PolarGenerator();
+        for(int i=0; i<10; ++i)
+            System.out.println(g.kovetkezo());
+    }
+}
+]]>
+</programlisting>
+        <para>
+	A polárgenerátor két véletlenszerű érték generálására alkalmazható.
+        </para>   
+	<screen><![CDATA[$ ubuntu@ubuntu:~/Desktop/Polargen$ Java Polargen
+2.40276
+-0.892715
+0.533079
+-0.0335743
+1.03269
+-0.0934786
+0.425988
+-2.02593
+0.291546
+0.375556
+	]]></screen>           
+    </section>        
+
+    <section>
+        <title>LZW</title>
+        <para>
+            Valósítsd meg C-ben az LZW algoritmus fa-építését!
+        </para>
+        <para>
+            Megoldás forrása:<link xlink:href="https://github.com/Borbiro/Prog1/blob/master/z3a7.cpp">https://github.com/Borbiro/Prog1/blob/master/z3a7.cpp</link>                
+        </para>
+	<para>
+	Program futatása: <code>./z3a7 [bemenő fájl] -o [kimenő fájl]</code>
+	</para>
+    </section>        
+        
+    <section>
+        <title>Fabejárás</title>
+	<para>
+	Preorder bejárás: 1. gyökér feldolgozás 2. bal oldal bejárása 3.jobb oldal bejárása
+	</para>
+	<programlisting language="c"><![CDATA[void kiir (Csomopont * elem, std::ostream & os)
+    {
+     
+        if (elem != NULL)
+        {
+            ++melyseg;
+	 os << elem->getBetu () << "(" << melyseg - 1 << ")" << std::endl;            
+	
+            
+            for (int i = 0; i < melyseg; ++i)
+                os << "---";
+           kiir (elem->nullasGyermek (), os);
+            kiir (elem->egyesGyermek (), os);
+            --melyseg;
+        }
+    }]]></programlisting>
+	<para>
+	Inorder bejárás: 1. Baloldal bejárása 2. Gyökér feldolgozás 3. Jobb oldal bejárása
+	</para>
+	<programlisting language="c"><![CDATA[void kiir (Csomopont * elem, std::ostream & os)
+    {
+     
+        if (elem != NULL)
+        {
+            ++melyseg;
+	       
+	
+             kiir (elem->nullasGyermek (), os);
+            for (int i = 0; i < melyseg; ++i)
+                os << "---";
+          
+ os << elem->getBetu () << "(" << melyseg - 1 << ")" << std::endl;     
+            kiir (elem->egyesGyermek (), os);
+            --melyseg;
+        }
+    }]]></programlisting>
+	<para>
+	Postorder bejárás: 1. Bal oldal bejárása 2. Jobb oldal bejárása 3. gyöklér feldolgozás
+	</para>
+	<programlisting language="c"><![CDATA[void kiir (Csomopont * elem, std::ostream & os)
+    {
+     
+        if (elem != NULL)
+        {
+            ++melyseg;
+	 kiir (elem->egyesGyermek (), os);        
+	 kiir (elem->nullasGyermek (), os);
+            
+            for (int i = 0; i < melyseg; ++i)
+                os << "---";
+          
+            
+ os << elem->getBetu () << "(" << melyseg - 1 << ")" << std::endl;   
+            --melyseg;
+        }
+    }]]></programlisting>
+    </section>        
+                        
+    <section>
+        <title>Tag a gyökér</title>
+        <para>
+            Az LZW algoritmust ültesd át egy C++ osztályba, legyen egy Tree és egy beágyazott Node
+            osztálya. A gyökér csomópont legyen kompozícióban a fával!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:<link xlink:href="https://github.com/Borbiro/Prog1/blob/master/z3a7.cpp">https://github.com/Borbiro/Prog1/blob/master/z3a7.cpp</link>                 
+        </para>
+    </section>        
+                
+    <section>
+        <title>Mutató a gyökér</title>
+        <para>
+            Írd át az előző forrást, hogy a gyökér csomópont ne kompozícióban, csak aggregációban legyen a 
+            fával!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:<link xlink:href="https://github.com/Borbiro/Prog1/blob/master/z3a7.cpp">https://github.com/Borbiro/Prog1/blob/master/z3a7.cpp</link> 
+        </para>
+    </section>                     
+
+    <section>
+        <title>Mozgató szemantika</title>
+        <para>
+            Írj az előző programhoz mozgató konstruktort és értékadást, a mozgató konstruktor legyen a mozgató
+            értékadásra alapozva!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása:  
+        </para>
+    </section>                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

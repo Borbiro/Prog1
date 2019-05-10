@@ -1,0 +1,74 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Gutenberg!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+        <cover>
+            <para>
+                Programozás tankönyvek rövid olvasónaplói.
+            </para>
+        </cover>
+    </info>
+    <section>
+        <title>Programozási alapfogalmak</title>
+        <para>         
+            <citation>PICI</citation>       
+        </para>
+	<para>
+	A programozásnak 3 féle szintjét különböztetjük meg: 1, gépi nyelv 2, Assemly nyelv 3, magas szintű nyelv.
+A magasszintű nyelven megírt programmot forrásprogramnak vagy forrásszövegnek hívjuk.
+A magas szintű programozási nyelvekbe tartozik például a C,C++,Java,Python stb..
+A program írás közben figyelembe kell venni a szintaktikai és szemantikai szabályokat.
+Ezeket a programmokat gépire kell írni, így erre használjuk a fordítóprogramokat és az interpreteseket.
+A fordítóprogramok a következőket veszik figyelembe: lexikális elemzés,szintaktikai elemzés,szemantikai elemzés,kódgenerálás.
+A futó programot az operációs rendszer felügyeli.
+Az interpreteres nem készít tárgyikódot, hanem lefordítja és egyből le is futattja a programmot.
+Minden programmnyelvnek meg van a saját szabványa, amit hivatkozási nyelvnek hívunk.
+A implemetációk egymással és a hivatkozási nyelvekkel sem kompatibilisek a mai napig.
+Napjainban a programozáshoz fejlesztői környezetek állnak rendelkezélsünkre.
+A programm nyelveket osztályoz, imperatív, dekleratív és más nyelvek között.
+
+Az adattípusokat 3 dolog határoz meg: 1, tartomány 2, műveletek 3, reprezentűció.
+Az adattípusok tartománya azokat az elemeknek a konkrét értékekét határoza meg.
+Az  adattípushoz  hozzátartoznak  azok  a  mőveletek,  amelyeket  a  tartomány  elemein  végre tudunk hajtani.
+A reprezentáció a tartományok értékének megjelenítésért felel.
+Az adattípusoknak van két nagy csoportja:
+1, A skalár vagy az egyszerű
+2, A strukturált vagy az összetett
+A nevesített konstansoknak 3 komponense van név,típus, érték.
+A változó olyan programozási eszköz, amelynek négy komponense van név, attribútumok, cím, érték.
+A C-ben sok típus rendszer van például egész:int,long int, short int vagy betű:char.
+	</para>
+    </section>        
+    <section>
+        <title>Programozás bevezetés</title>
+        <para>                
+            <citation>KERNIGHANRITCHIE</citation>
+        </para>
+	<para>
+A  kifejezések  szintaktikai  eszközök.
+Arra  valók,  hogy  a  program  egy  adott  pontján  ott  már ismert értékekbıl új értéket határozzunk meg.
+A kifejezések formálisan 3 öszetevőből áll: operandusok, operátorok, kerek zárójelek.
+A  kifejezésnek  három  alakja  lehet  attól  függıen,  hogy  kétoperandusú  operátorok
+esetén  az operandusok és az operátor sorrendje milyen. A lehetséges esetek: 
+−prefix, az operátor az operandusok elıtt áll.
+−infix, az operátor az operandusok között áll.
+−postfix, az operátor az operandusok mögött áll.
+Azt a kifejezést, amelynek értéke fordítási idıben eldıl, amelynek kiértékelését a fordító végzi konstans kifejezésnek hívjuk.
+Operandusai literálok és nevesített konstansok lehetnek.
+	</para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/zmfT9miB-jY">https://youtu.be/zmfT9miB-jY</link>
+        </para>        
+    </section>        
+    <section>
+        <title>Programozás</title>
+        <para>                
+            <citation>BMECPP</citation>
+	</para>	
+	<para>
+	Az egyik legnépszerűbb és legnehezebb magas szintű programozási nyelv a C++. Emellett még ott a C ami szinte ugyan az, csak nem lehet változókat túlterhelni vagy cout helyett printf-el kell kiiratni vagy C-ben nincsenek még osztályok. Elég sok minden van a C++-ban már ami a C-ben állom például használhatunk operátorookat amit C-ben függvények helyettesítenek.
+	</para>
+    </section>        
+</chapter>                

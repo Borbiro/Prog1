@@ -1,0 +1,358 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Turing!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Végtelen ciklus</title>
+        <para>
+            Írj olyan C végtelen ciklusokat, amelyek 0 illetve 100 százalékban dolgoztatnak egy magot és egy olyat, amely  
+            100 százalékban minden magot!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para> 
+	<para>
+	Végtelen ciklus egy olyan ciklus aminek egy olyan feltételt adunk meg, ami soha nem teljesül, így ameddig le nem lőjük futni fog.
+	</para>
+	<para>
+	0%-os százalékban dolgoztató végtelen ciklus!
+	</para>
+	<para>
+	Először is include-oljuk a unistd.h header fájt, mivel benne található meg a sleep függvény.
+	A main függvényben létrehozunk egy while ciklus, ahol feltételnek megadjuk az 1-et és a while cikluson belül meghívjuk a sleep függvényt, ami a programm futatását késlelteti, így nem fog CPU-t használni még ha fut is!
+	</para>
+	<programlisting language="c"><![CDATA[#include <unistd.h>
+
+int main(){
+	while(1){
+		sleep(1);
+	}
+	return 0;
+}]]></programlisting>
+	<para>
+	100%-ban dolgoztató végtelen ciklus, de csak egy magot!
+	</para>
+	<para>
+	Most elég nekünk a stdio.h header fájl, mivel nem kell a sleep függvény. Az előzőhöz képest annyi változik, hogy kitöröljük a sleep-et és így a programm rendesen futni fog, de csak az egyik magot veszi igénybe.
+	</para>
+	<programlisting language="c"><![CDATA[#include <stdio.h>
+
+int main(){ 
+	while(1)
+		{}
+	return 0;
+}]]></programlisting>
+	<para>
+	100%-ban dolgoztató végtelen ciklus és mind a 4 magot!
+	</para>
+	<para>
+	Itt párhuzamosan fogjuk pörgetni a CPU-t az Openmp segítségével! Először is include-juk a omp.h header fájlt, amibe benne van ami kell nekünk. Az main függvénybe beírjuk a #pragma omp parallel-t, ami a CPU párhuzamos futásáért fog felelni! Utána egy while ciklus és kész is vagyunk.
+	</para>
+	<para>
+	Ezt a programm fordítását a következő képen tudjuk fordítani.
+	</para>
+	<para>
+	gcc vegtelen.c -o vegtelen <function> -fopenmp </function>
+	</para>
+	<programlisting language="c"><![CDATA[#include <omp.h>
+
+int main(){
+	#pragma omp parallel 
+	while(1)
+		{}
+	return 0;
+}]]></programlisting>
+	           
+    </section>        
+        
+    <section>
+        <title>Lefagyott, nem fagyott, akkor most mi van?</title>
+        <para>
+            Mutasd meg, hogy nem lehet olyan programot írni, amely bármely más programról eldönti, hogy le fog-e fagyni vagy sem!
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:  tegyük fel, hogy akkora haxorok vagyunk, hogy meg tudjuk írni a <function>Lefagy</function>
+            függvényt, amely tetszőleges programról el tudja dönteni, hogy van-e benne vlgtelen ciklus:              
+        </para>
+        <programlisting language="c"><![CDATA[Program T100
+{
+
+	boolean Lefagy(Program P)
+	{
+		 if(P-ben van végtelen ciklus)
+			return true;
+		 else
+			return false; 
+	}
+
+	main(Input Q)
+	{
+		Lefagy(Q)
+	}
+}]]></programlisting>            
+        <para>
+            A program futtatása, például akár az előző <filename>v.c</filename> ilyen pszeudókódjára:
+            <screen><![CDATA[T100(t.c.pseudo)
+true]]></screen>            
+            akár önmagára
+            <screen><![CDATA[T100(T100)
+false]]></screen>  
+            ezt a kimenetet adja.          
+        </para>
+        <para>
+            A T100-as programot felhasználva készítsük most el az alábbi T1000-set, amelyben a
+            Lefagy-ra épőlő Lefagy2 már nem tartalmaz feltételezett, csak csak konkrét kódot:
+        </para>
+        <programlisting language="c"><![CDATA[Program T1000
+{
+
+	boolean Lefagy(Program P)
+	{
+		 if(P-ben van végtelen ciklus)
+			return true;
+		 else
+			return false; 
+	}
+
+	boolean Lefagy2(Program P)
+	{
+		 if(Lefagy(P))
+			return true;
+		 else
+			for(;;); 
+	}
+
+	main(Input Q)
+	{
+		Lefagy2(Q)
+	}
+
+}]]></programlisting>            
+        <programlisting><![CDATA[]]></programlisting>            
+        <para>
+            Mit for kiírni erre a <computeroutput>T1000(T1000)</computeroutput> futtatásra?
+                                
+            <itemizedlist>
+                <listitem>
+                    <para>Ha T1000 lefagyó, akkor nem fog lefagyni, kiírja, hogy true</para>                        
+                </listitem>
+                <listitem>
+                    <para>Ha T1000 nem fagyó, akkor pedig le fog fagyni...</para>                        
+                </listitem>
+            </itemizedlist>
+            akkor most hogy fog működni? Sehogy, mert ilyen <function>Lefagy</function>
+            függvényt, azaz a T100 program nem is létezik.                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+	<para>
+	Nem tudunk olyan programmot írni ami megtudja jósolni, hogy egy programm le fog e fagyni. De elméletileg azt megtudjuk nézni ennek a pszeukódnak a segítségével, hogy van-e benne végtelen ciklus. 
+	</para>
+	<para>
+A T1000-esbe bele ágyazuk a T100-ast.
+	A T1000 programm ha saját magát vizsgálja, ha megtalálja a végtelen ciklust le fog fagyni, ha nem akkor meg tovább fut.
+	</para>
+    </section>        
+                
+    <section>
+        <title>Változók értékének felcserélése</title>
+        <para>
+            Írj olyan C programot, amely felcseréli két változó értékét, bármiféle logikai utasítás vagy kifejezés
+            nasználata nélkül!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk">https://bhaxor.blog.hu/2018/08/28/10_begin_goto_20_avagy_elindulunk</link>
+        </para>
+        <para>
+            Megoldás forrása:  
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+	<para>
+	Egy plusz valtozóval!
+	</para>
+	<programlisting language="c"><![CDATA[#include <stdio.h>
+
+int main(){
+	int a=5;
+	int b=7;
+	int c=a;
+	a=b;
+	b=c;
+	printf("%d\n", a);
+	printf("%d\n", b);
+	return 0;
+}]]></programlisting>
+	<programlisting language="c"><![CDATA[#include <stdio.h>
+
+int main(){
+	int a=5;
+	int b=7;
+	a=a*b;
+	b=a/b;
+	a=a/b;
+	printf("%d\n", a);
+	printf("%d\n", b);
+	return 0;
+}]]></programlisting>
+	<programlisting language="c"><![CDATA[#include <stdio.h>
+
+int main(){
+	int a=5;
+	int b=7;
+	a=a^b;
+	b=a^b;
+	a=a^b;
+	printf("%d\n", a);
+	printf("%d\n", b);
+	return 0;
+}]]></programlisting>
+    </section>                     
+
+    <section>
+        <title>Labdapattogás</title>
+        <para>
+            Először if-ekkel, majd bármiféle logikai utasítás vagy kifejezés
+            nasználata nélkül írj egy olyan programot, ami egy labdát pattogtat a karakteres konzolon! (Hogy mit értek
+            pattogtatás alatt, alább láthatod a videókon.)
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/08/28/labdapattogas">https://bhaxor.blog.hu/2018/08/28/labdapattogas</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/Borbiro/Prog1/blob/master/labda.c">https://github.com/Borbiro/Prog1/blob/master/labda.c</link>
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+	<para>
+	A labdapatogtatáshoz szükséges include-ni a curses.h és unistd.h header fájlokat! A curses.h, azért kell hogy új ablakot nyithassunk meg és még mellette a poziciókat meg a mozgást meg tudjuk adni. Az unistd.h meg a programm milyen gyorsan fusson ("A labda milyen gyors legyen"). 
+	</para>
+	<para>
+	Először is deklarálnunk kell egy ablakot, ami a jelen pillanatba win nevet viseli. Utána deklarálunk hat változót amiből 2 lesz a kiindulási pont, 2 a mozgásnak a nagysága, 2 meg a szélsőérték.
+	</para>
+	<para>
+	Lértehozunk egy for ciklust aminek nem adunk feltételeket, hogy addig fusson ameddig ki nem lőjük!(végtelen ciklus) 
+	</para>
+	<para>
+	A getmaxyx-el megcsináljuk az asztalt meg a szélsőértékeket, utána pedig a labda pozicióit és amit mozgatunk (jelen pillanatba egy "0") a mvprintw-vel.
+	</para>
+	<para>
+	A refresh-el megnyitjuk az asztalt, az usleep-el meg a sebességet határozuk meg, minél nagyobb az érték annál lassabb.
+	</para>
+	<para>
+	A clear-el az előzőleg generált "labdákat" tüntetjük el így mindig egy lesz.
+	</para>
+	<para>
+	A if függvényel pedig ha hozzá ér a szélekhez akkor reciprokot von és "visszapattan".
+	</para>
+    </section>                     
+
+    <section>
+        <title>Szóhossz és a Linus Torvalds féle BogoMIPS</title>
+        <para>
+            Írj egy programot, ami megnézi, hogy hány bites a szó a gépeden, azaz mekkora az <type>int</type> mérete.
+            Használd ugyanazt a while ciklus fejet, amit Linus Torvalds a BogoMIPS rutinjában! 
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href=""></link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href=""></link>
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat... 
+        </para>
+	<para>
+	Az a változónak megadunk egy értéket és a while ciklus segítségével, addig lépked ballra ameddig a nem lesz egyenlő 0-val. Ez a bitenként lépkedés.
+	</para>
+	<programlisting language="c"><![CDATA[#include "stdio.h"
+
+int main()
+{
+	int a = 5;
+	int c = 0;
+	while(a!=0){
+		a = a << 1;
+		c = c + 1;
+	}
+	printf("%d\n", c);
+}]]></programlisting>
+    </section>                     
+
+    <section>
+        <title>Helló, Google!</title>
+        <para>
+            Írj olyan C programot, amely egy 4 honlapból álló hálózatra kiszámolja a négy lap Page-Rank 
+            értékét!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href=""></link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/Borbiro/Prog1/blob/master/pagerank.c">https://github.com/Borbiro/Prog1/blob/master/pagerank.c</link>
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+	<para>
+	A pagerank sok böngészőnél használt keresőmotor, ami hiperlinkeket használ, ami számokat rendel az adott oldalhoz. Mindenki a saját lapján csak neki tetsző oldalakat oszt meg, így ez a pagerank-nál bizonyos szavazatót jelent.
+	</para>
+    </section>
+
+    <section xml:id="Brun">
+        <title>100 éves a Brun tétel</title>
+        <para>
+            Írj R szimulációt a Brun tétel demonstrálására!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/xbYhp9G6VqQ">https://youtu.be/xbYhp9G6VqQ</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/Primek_R">https://gitlab.com/nbatfai/bhax/blob/master/attention_raising/Primek_R</link>
+        </para>
+	<para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+	<para>
+	A brun tétel ikerprímekről szól, az ikerprímek azok amiknek a különbsége 2. Az ikerprímek reciprók összege egy bizonyos összeghez konvergál, amit a tudosok kb. 1.8 és 2.2 közé tesznek, ezeket a számokat Brun-konstansnak nevezik.
+	</para>
+    </section>
+    
+    <section xml:id="bhax-textbook-feladatok-turing.MontyHall">
+        <title>A Monty Hall probléma</title>
+        <para>
+            Írj R szimulációt a Monty Hall problémára!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2019/01/03/erdos_pal_mit_keresett_a_nagykonyvben_a_monty_hall-paradoxon_kapcsan">https://bhaxor.blog.hu/2019/01/03/erdos_pal_mit_keresett_a_nagykonyvben_a_monty_hall-paradoxon_kapcsan</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/MontyHall_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/MontyHall_R</link>
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+	<para>
+	A Monty Hall probléma egy valószínűségszámításhoz kapcsolodó paradoxon. Arról szól, hogy 2 ajtó mögött rossz nyeremény van az egyik mögött meg egy jó! A játékos választ egy ajtót és a játék vezető kinyit neki egy ajtót ahol egy rossz nyeremény van és esélyt ad a játékosnak, hogy változtathason és itt a probléma, hogy változtasson vagy ne?
+	</para>
+	<para>
+	Monty csak azt az ajtót válaszhatja, hogy ne legyen az autó, szóval ha a játékos az autóra mutat akkor két választási lehetősége van, de 2/3 az esélye hogy kecskére mutatsz, így mivel az autó ajtaját nem nyithatja ki, ezért 2/3-a valószínűsége ha váltasz autót találsz.
+	</para>
+    </section>
+
+</chapter>                

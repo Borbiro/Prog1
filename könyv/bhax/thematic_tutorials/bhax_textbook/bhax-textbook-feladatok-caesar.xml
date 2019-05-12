@@ -17,9 +17,7 @@
             <link xlink:href="https://youtu.be/RKbX5-EWpzA">https://youtu.be/RKbX5-EWpzA</link>.
         </para>
         <para>
-            Megoldás forrása: <link xlink:href="Caesar/tm.c">
-                <filename>bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/Caesar/tm.c</filename>
-            </link> 
+            Megoldás forrása:
         </para>
         <programlisting language="c"><![CDATA[#include <stdio.h>
 #include <stdlib.h>

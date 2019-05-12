@@ -1,0 +1,22 @@
+<authorgroup xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <author>
+        <personname>
+            <surname>Borbíró</surname>
+            <firstname>Szabolcs</firstname>        
+        </personname>    
+        <affiliation>
+            <jobtitle>Tanuló</jobtitle>
+            <orgname>Debreceni Egyetem</orgname>
+            <orgdiv>Informatika Kar</orgdiv>
+            <address>
+                <email>borszaegyetem@gmail.com</email>
+            </address>
+        </affiliation>
+        <address>
+            <street>Egyetem tér 1.</street>
+            <city>Debrecen</city>
+            <postcode>4028</postcode>
+            <country>Magyarország</country>
+        </address>
+    </author>  
+</authorgroup>

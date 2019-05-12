@@ -1,0 +1,71 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Conway!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Hangyaszimulációk</title>
+        <para>
+            Írj Qt C++-ban egy hangyaszimulációs programot, a forrásaidról utólag reverse engineering jelleggel
+            készíts UML osztálydiagramot is!
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://bhaxor.blog.hu/2018/10/10/myrmecologist">https://bhaxor.blog.hu/2018/10/10/myrmecologist</link>
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/Borbiro/Prog1/tree/master/Hangya">https://github.com/Borbiro/Prog1/tree/master/Hangya</link>               
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat: 3 osztályt hozzunk létre: Ant,Antwin,Anthread. Az Antba a hangyának a tulajdonságait adjuk meg, például hogy merre tartson. Azt Antwin-be az ablak szélességét, magasságát határozzuk meg, a hangyák színét. Az Anthread nagyából ugyan olyan tulajdonságokkal rendelkzeik mint a Antwin. A program futtatásához a qmake-et kell használnunk, amivel tudjuk szüneteltetni a program futtását a "P" lenyomásával, illetve a "Q" lenyomásával kiléphetünk belőle.
+        </para>            
+    </section>        
+    <section>
+        <title>Java életjáték</title>
+        <para>
+            Írd meg Java-ban a John Horton Conway-féle életjátékot, 
+            valósítsa meg a sikló-kilövőt!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/Borbiro/Prog1/blob/master/eletjatek.java">https://github.com/Borbiro/Prog1/blob/master/eletjatek.java</link>               
+        </para>
+        <para>
+            A John Horton Conway-féle életjáték egy nagyon egyszerű játék, van egy élettér ami négyzetrácsós és minden négyzetbe egy sejt élhet, születhet vagy halhat meg. Ha 3 vagy kevesebb sejt van körülötte akkor a sejt életben marad, ha 3-nál több akkor meghal és ha az üres mezőnél a szomszédjai kötött pontosan 3 él akkor ott születni fog egy sejt. A szimuláció úgy indul, hogy megadjuk a kiindulási pontját. Fontos a java fordító használata.
+        </para>            
+    </section>        
+    <section>
+        <title>Qt C++ életjáték</title>
+        <para>
+            Most Qt C++-ban!
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/Borbiro/Prog1/tree/master/eletjatek">https://github.com/Borbiro/Prog1/tree/master/eletjatek</link>               
+        </para>
+        <para> A program szinte ugyanugy mukodik mint a java esetében lényeges eltérés csak a fordításnálfedezheto fel. ˝
+A qmake - procejt parancsal a .pro faljt generalja le . Ezt futtatva generaljuk le a makefile-t es a make
+parancsal fordítjuk le a programot .qmake - project | qmake x.y.pro | make | ./xy.
+        </para>            
+    </section>        
+    <section>
+        <title>BrainB Benchmark</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: 
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/Borbiro/Prog1/tree/master/BrainB">https://github.com/Borbiro/Prog1/tree/master/BrainB</link>               
+        </para>
+        <para>
+            A program az esportolok tesztelés miatt jött létre.
+        </para>            
+    </section>        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</chapter>                

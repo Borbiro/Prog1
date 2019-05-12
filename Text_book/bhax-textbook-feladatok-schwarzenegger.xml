@@ -1,0 +1,89 @@
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:lang="hu">
+    <info>
+        <title>Helló, Schwarzenegger!</title>
+        <keywordset>
+            <keyword/>
+        </keywordset>
+    </info>
+    <section>
+        <title>Szoftmax Py MNIST</title>
+        <para>
+            Python
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/j7f9SkJR3oc">https://youtu.be/j7f9SkJR3oc</link>      
+        </para>
+        <para>
+            Megoldás forrása: <link xlink:href="https://github.com/tensorflow/tensorflow/releases/tag/v0.9.0">https://github.com/tensorflow/tensorflow/releases/tag/v0.9.0</link> (/tensorflow-0.9.0/tensorflow/examples/tutorials/mnist/), <link xlink:href="https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol">https://progpater.blog.hu/2016/11/13/hello_samu_a_tensorflow-bol</link>  
+        </para>
+        <para>
+         Ezt a programmot Python-al írták meg. Ehez a program müködéséhez kell nekünk telepíteni a tesnorflow-ot. A tensorflow egy arc felismerő programm. Amint feltelepítettük tele lesz az adatbázis képpel amivel elemezni fogja a többi képet és különböző egységekbe rakja őket.
+        </para>
+    </section>        
+
+<!--
+    <section>
+        <title>Szoftmax R MNIST</title>
+        <para>
+            R            
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+-->
+    
+    <section>
+        <title>Mély MNIST</title>
+        <para>
+            Python            
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:  <link xlink:href="https://github.com/Borbiro/Prog1/blob/master/minst_deep.py">https://github.com/Borbiro/Prog1/blob/master/minst_deep.py</link>              
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+<!--
+    <section>
+        <title>Deep dream</title>
+        <para>
+            Keras            
+        </para>
+        <para>
+            Megoldás videó:
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+-->                  
+    <section>
+        <title>Minecraft-MALMÖ</title>
+        <para>
+        </para>
+        <para>
+            Megoldás videó: <link xlink:href="https://youtu.be/bAPSu3Rndi8">https://youtu.be/bAPSu3Rndi8</link>      
+        </para>
+        <para>
+            Megoldás forrása:                
+        </para>
+        <para>
+            Tanulságok, tapasztalatok, magyarázat...
+        </para>
+    </section>        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+</chapter>                

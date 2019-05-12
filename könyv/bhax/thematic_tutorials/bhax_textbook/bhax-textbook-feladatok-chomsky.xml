@@ -128,9 +128,7 @@ asdash[realnum=4 4.000000]jj[realnum=6 6.000000]]]></programlisting>
             Megoldás videó: <link xlink:href="https://youtu.be/06C_PqDpD_k">https://youtu.be/06C_PqDpD_k</link>
         </para>
         <para>
-            Megoldás forrása: <link xlink:href="Chomsky/l337d1c7.l">
-                <filename>bhax/thematic_tutorials/bhax_textbook_IgyNeveldaProgramozod/Chomsky/l337d1c7.l</filename>
-            </link>  
+            Megoldás forrása:  
         </para>
         <programlisting language="c"><![CDATA[%{
   #include <stdio.h>
